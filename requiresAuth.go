@@ -15,11 +15,11 @@ func ProductTypeRequiresAuth(pt ProductType) bool {
 	return false
 }
 
-var downloadTypeRequiresAuth = []DownloadType{}
+var imageTypeRequiresAuth []ImageType
 
-func DownloadTypeRequiresAuth(dt DownloadType) bool {
-	for _, ra := range downloadTypeRequiresAuth {
-		if ra == dt {
+func ImageTypeRequiresAuth(it ImageType) bool {
+	for _, itra := range imageTypeRequiresAuth {
+		if itra == it {
 			return true
 		}
 	}
