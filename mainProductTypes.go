@@ -1,4 +1,4 @@
-package vangogh_types
+package vangogh_products
 
 var detailMainProductTypes = map[ProductType][]ProductType{
 	Details:       {AccountProducts},
@@ -6,6 +6,6 @@ var detailMainProductTypes = map[ProductType][]ProductType{
 	ApiProductsV2: {StoreProducts, AccountProducts},
 }
 
-func MainProductTypes(pt ProductType) []ProductType {
+func MainTypes(pt ProductType) []ProductType {
 	return detailMainProductTypes[pt]
 }

@@ -1,13 +1,13 @@
-package vangogh_types
+package vangogh_products
 
-func AllPagedProductTypes() []ProductType {
+func AllPaged() []ProductType {
 	return []ProductType{
 		StorePage,
 		AccountPage,
 		WishlistPage}
 }
 
-func AllDetailProductTypes() []ProductType {
+func AllDetail() []ProductType {
 	return []ProductType{
 		Details,
 		ApiProductsV1,
@@ -15,7 +15,7 @@ func AllDetailProductTypes() []ProductType {
 	}
 }
 
-func AllLocalProductTypes() []ProductType {
+func AllLocal() []ProductType {
 	return []ProductType{
 		StoreProducts,
 		AccountProducts,

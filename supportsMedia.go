@@ -1,4 +1,4 @@
-package vangogh_types
+package vangogh_products
 
 import (
 	"github.com/arelate/gog_media"
@@ -14,7 +14,7 @@ func SupportsMedia(pt ProductType, mt gog_media.Media) bool {
 	if !gog_media.Valid(mt) {
 		return false
 	}
-	if !ValidProductType(pt) {
+	if !Valid(pt) {
 		return false
 	}
 

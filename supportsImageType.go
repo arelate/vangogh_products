@@ -1,4 +1,4 @@
-package vangogh_types
+package vangogh_products
 
 import "github.com/arelate/vangogh_images"
 
@@ -23,7 +23,7 @@ var supportedImageTypes = map[ProductType][]vangogh_images.ImageType{
 	},
 }
 
-func ProductTypesSupportingImageType(imageType vangogh_images.ImageType) []ProductType {
+func AllSupportingImageType(imageType vangogh_images.ImageType) []ProductType {
 	pts := make([]ProductType, 0)
 	for pt, its := range supportedImageTypes {
 		for _, it := range its {
@@ -37,7 +37,7 @@ func ProductTypesSupportingImageType(imageType vangogh_images.ImageType) []Produ
 }
 
 func SupportsImageType(pt ProductType, it vangogh_images.ImageType) bool {
-	if !ValidProductType(pt) ||
+	if !Valid(pt) ||
 		!vangogh_images.Valid(it) {
 		return false
 	}

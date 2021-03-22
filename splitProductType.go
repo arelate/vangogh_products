@@ -1,4 +1,4 @@
-package vangogh_types
+package vangogh_products
 
 var splitProductTypes = map[ProductType]ProductType{
 	StorePage:    StoreProducts,
@@ -6,11 +6,11 @@ var splitProductTypes = map[ProductType]ProductType{
 	WishlistPage: WishlistProducts,
 }
 
-func SplitProductType(pt ProductType) ProductType {
+func SplitType(pt ProductType) ProductType {
 	splitProductType, ok := splitProductTypes[pt]
 	if ok {
 		return splitProductType
 	}
 
-	return UnknownProductType
+	return Unknown
 }

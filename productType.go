@@ -1,9 +1,9 @@
-package vangogh_types
+package vangogh_products
 
 type ProductType int
 
 const (
-	UnknownProductType ProductType = iota
+	Unknown ProductType = iota
 	StorePage
 	StoreProducts
 	AccountPage
@@ -16,16 +16,16 @@ const (
 )
 
 var productTypeStrings = map[ProductType]string{
-	UnknownProductType: "unknown-product-type",
-	StorePage:          "store-page",
-	StoreProducts:      "store-products",
-	AccountPage:        "account-page",
-	AccountProducts:    "account-products",
-	WishlistPage:       "wishlist-page",
-	WishlistProducts:   "wishlist-products",
-	Details:            "details",
-	ApiProductsV1:      "api-products-v1",
-	ApiProductsV2:      "api-products-v2",
+	Unknown:          "unknown-product-type",
+	StorePage:        "store-page",
+	StoreProducts:    "store-products",
+	AccountPage:      "account-page",
+	AccountProducts:  "account-products",
+	WishlistPage:     "wishlist-page",
+	WishlistProducts: "wishlist-products",
+	Details:          "details",
+	ApiProductsV1:    "api-products-v1",
+	ApiProductsV2:    "api-products-v2",
 }
 
 func (pt ProductType) String() string {
@@ -34,19 +34,19 @@ func (pt ProductType) String() string {
 		return str
 	}
 
-	return productTypeStrings[UnknownProductType]
+	return productTypeStrings[Unknown]
 }
 
-func ParseProductType(productType string) ProductType {
+func Parse(productType string) ProductType {
 	for pt, str := range productTypeStrings {
 		if str == productType {
 			return pt
 		}
 	}
-	return UnknownProductType
+	return Unknown
 }
 
-func ValidProductType(pt ProductType) bool {
+func Valid(pt ProductType) bool {
 	_, ok := productTypeStrings[pt]
-	return ok && pt != UnknownProductType
+	return ok && pt != Unknown
 }
