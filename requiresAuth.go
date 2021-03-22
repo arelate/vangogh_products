@@ -14,14 +14,3 @@ func ProductTypeRequiresAuth(pt ProductType) bool {
 	}
 	return false
 }
-
-var imageTypeRequiresAuth []ImageType
-
-func ImageTypeRequiresAuth(it ImageType) bool {
-	for _, itra := range imageTypeRequiresAuth {
-		if itra == it {
-			return true
-		}
-	}
-	return false
-}

@@ -1,15 +1,29 @@
 package vangogh_types
 
-var supportedImageTypes = map[ProductType][]ImageType{
-	StoreProducts:    {Image, Screenshots},
-	AccountProducts:  {Image},
-	WishlistProducts: {Image},
-	Details:          {Background},
-	ApiProductsV1:    {Icon, Background, Screenshots},
-	ApiProductsV2:    {Image, BoxArt, Logo, Icon, Background, GalaxyBackground, Screenshots},
+import "github.com/arelate/vangogh_images"
+
+var supportedImageTypes = map[ProductType][]vangogh_images.ImageType{
+	StoreProducts:    {vangogh_images.Image, vangogh_images.Screenshots},
+	AccountProducts:  {vangogh_images.Image},
+	WishlistProducts: {vangogh_images.Image},
+	Details:          {vangogh_images.Background},
+	ApiProductsV1: {
+		vangogh_images.Icon,
+		vangogh_images.Background,
+		vangogh_images.Screenshots,
+	},
+	ApiProductsV2: {
+		vangogh_images.Image,
+		vangogh_images.BoxArt,
+		vangogh_images.Logo,
+		vangogh_images.Icon,
+		vangogh_images.Background,
+		vangogh_images.GalaxyBackground,
+		vangogh_images.Screenshots,
+	},
 }
 
-func ProductTypesSupportingImageType(imageType ImageType) []ProductType {
+func ProductTypesSupportingImageType(imageType vangogh_images.ImageType) []ProductType {
 	pts := make([]ProductType, 0)
 	for pt, its := range supportedImageTypes {
 		for _, it := range its {
@@ -22,9 +36,9 @@ func ProductTypesSupportingImageType(imageType ImageType) []ProductType {
 	return pts
 }
 
-func SupportsImageType(pt ProductType, it ImageType) bool {
+func SupportsImageType(pt ProductType, it vangogh_images.ImageType) bool {
 	if !ValidProductType(pt) ||
-		!ValidImageType(it) {
+		!vangogh_images.Valid(it) {
 		return false
 	}
 
