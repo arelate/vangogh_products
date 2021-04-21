@@ -1,13 +1,13 @@
 package vangogh_products
 
-func AllPaged() []ProductType {
+func Paged() []ProductType {
 	return []ProductType{
 		StorePage,
 		AccountPage,
 		WishlistPage}
 }
 
-func AllDetail() []ProductType {
+func Detail() []ProductType {
 	return []ProductType{
 		Details,
 		ApiProductsV1,
@@ -15,7 +15,13 @@ func AllDetail() []ProductType {
 	}
 }
 
-func AllLocal() []ProductType {
+func Remote() []ProductType {
+	remote := make([]ProductType, 0)
+	remote = append(remote, Paged()...)
+	return append(remote, Detail()...)
+}
+
+func Local() []ProductType {
 	return []ProductType{
 		StoreProducts,
 		AccountProducts,

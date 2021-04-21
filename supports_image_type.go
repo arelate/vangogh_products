@@ -6,7 +6,6 @@ var supportedImageTypes = map[ProductType][]vangogh_images.ImageType{
 	StoreProducts: {
 		vangogh_images.Image,
 		vangogh_images.Screenshots,
-		vangogh_images.Video,
 	},
 	AccountProducts:  {vangogh_images.Image},
 	WishlistProducts: {vangogh_images.Image},
@@ -15,7 +14,6 @@ var supportedImageTypes = map[ProductType][]vangogh_images.ImageType{
 		vangogh_images.Icon,
 		vangogh_images.Background,
 		vangogh_images.Screenshots,
-		vangogh_images.Video,
 	},
 	ApiProductsV2: {
 		vangogh_images.Image,
@@ -25,7 +23,6 @@ var supportedImageTypes = map[ProductType][]vangogh_images.ImageType{
 		vangogh_images.Background,
 		vangogh_images.GalaxyBackground,
 		vangogh_images.Screenshots,
-		vangogh_images.Video,
 	},
 }
 
