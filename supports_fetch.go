@@ -1,13 +1,13 @@
 package vangogh_products
 
-var supportFetch = []ProductType{
+var supportsGetItems = []ProductType{
 	Details,
 	ApiProductsV1,
 	ApiProductsV2,
 }
 
-func SupportsFetch(pt ProductType) bool {
-	for _, spt := range supportFetch {
+func SupportsGetItems(pt ProductType) bool {
+	for _, spt := range supportsGetItems {
 		if spt == pt {
 			return true
 		}

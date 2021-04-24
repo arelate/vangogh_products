@@ -4,6 +4,7 @@ var productTypeRequiresAuth = []ProductType{
 	AccountPage,
 	WishlistPage,
 	Details,
+	Licences,
 }
 
 func RequiresAuth(pt ProductType) bool {

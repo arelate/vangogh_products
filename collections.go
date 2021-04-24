@@ -7,6 +7,12 @@ func Paged() []ProductType {
 		WishlistPage}
 }
 
+func Direct() []ProductType {
+	return []ProductType{
+		Licences,
+	}
+}
+
 func Detail() []ProductType {
 	return []ProductType{
 		Details,
@@ -18,6 +24,7 @@ func Detail() []ProductType {
 func Remote() []ProductType {
 	remote := make([]ProductType, 0)
 	remote = append(remote, Paged()...)
+	remote = append(remote, Direct()...)
 	return append(remote, Detail()...)
 }
 
@@ -29,5 +36,6 @@ func Local() []ProductType {
 		Details,
 		ApiProductsV1,
 		ApiProductsV2,
+		LicenceProducts,
 	}
 }

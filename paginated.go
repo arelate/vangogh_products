@@ -1,13 +1,7 @@
 package vangogh_products
 
-var paginatedProductTypes = []ProductType{
-	StorePage,
-	AccountPage,
-	WishlistPage,
-}
-
-func Paginated(pt ProductType) bool {
-	for _, ppt := range paginatedProductTypes {
+func IsPaged(pt ProductType) bool {
+	for _, ppt := range Paged() {
 		if ppt == pt {
 			return true
 		}
