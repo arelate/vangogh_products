@@ -7,10 +7,5 @@ var supportsGetItems = []ProductType{
 }
 
 func SupportsGetItems(pt ProductType) bool {
-	for _, spt := range supportsGetItems {
-		if spt == pt {
-			return true
-		}
-	}
-	return false
+	return containsProductType(supportsGetItems, pt)
 }

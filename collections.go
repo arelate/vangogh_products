@@ -7,7 +7,7 @@ func Paged() []ProductType {
 		WishlistPage}
 }
 
-func Direct() []ProductType {
+func Array() []ProductType {
 	return []ProductType{
 		Licences,
 	}
@@ -24,7 +24,7 @@ func Detail() []ProductType {
 func Remote() []ProductType {
 	remote := make([]ProductType, 0)
 	remote = append(remote, Paged()...)
-	remote = append(remote, Direct()...)
+	remote = append(remote, Array()...)
 	return append(remote, Detail()...)
 }
 

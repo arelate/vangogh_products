@@ -4,6 +4,6 @@ var supportsCopyFromTo = map[ProductType]ProductType{
 	StoreProducts: WishlistProducts,
 }
 
-func SupportsCopy(pt1, pt2 ProductType) bool {
-	return supportsCopyFromTo[pt1] == pt2
+func SupportsCopy(from, to ProductType) bool {
+	return supportsCopyFromTo[from] == to
 }

@@ -1,6 +1,6 @@
 package vangogh_products
 
-var productTypeRequiresAuth = []ProductType{
+var requireAuth = []ProductType{
 	AccountPage,
 	WishlistPage,
 	Details,
@@ -8,10 +8,5 @@ var productTypeRequiresAuth = []ProductType{
 }
 
 func RequiresAuth(pt ProductType) bool {
-	for _, ra := range productTypeRequiresAuth {
-		if ra == pt {
-			return true
-		}
-	}
-	return false
+	return containsProductType(requireAuth, pt)
 }
