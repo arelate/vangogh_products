@@ -15,6 +15,8 @@ const (
 	ApiProductsV2
 	Licences
 	LicenceProducts
+	OrderPage
+	Order
 )
 
 var productTypeStrings = map[ProductType]string{
@@ -30,6 +32,8 @@ var productTypeStrings = map[ProductType]string{
 	ApiProductsV2:    "api-products-v2",
 	Licences:         "licences",
 	LicenceProducts:  "licence-products",
+	OrderPage:        "order-page",
+	Order:            "order",
 }
 
 func (pt ProductType) String() string {

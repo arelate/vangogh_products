@@ -4,6 +4,7 @@ var supportsGetItems = []ProductType{
 	Details,
 	ApiProductsV1,
 	ApiProductsV2,
+	Licences,
 }
 
 func SupportsGetItems(pt ProductType) bool {

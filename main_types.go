@@ -1,22 +1,17 @@
 package vangogh_products
 
 var detailMainProductTypes = map[ProductType][]ProductType{
-	AccountProducts: {LicenceProducts},
-	Details:         {AccountProducts},
-	ApiProductsV1:   {StoreProducts, AccountProducts},
+	Details: {LicenceProducts, AccountProducts},
+	ApiProductsV1: {
+		StoreProducts,
+		AccountProducts,
+		ApiProductsV2,
+	},
 	ApiProductsV2: {
 		StoreProducts,
 		AccountProducts,
-		ApiProductsV2, // .Links.IncludesGames
+		ApiProductsV2, // includes-games, is-included-in-games, requires-games, is-required-by-games
 	},
-}
-
-func MainTypesPriorityOrder() []ProductType {
-	return []ProductType{
-		LicenceProducts,
-		AccountProducts,
-		StoreProducts,
-	}
 }
 
 func MainTypes(pt ProductType) []ProductType {

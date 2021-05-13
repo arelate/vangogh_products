@@ -4,7 +4,9 @@ func Paged() []ProductType {
 	return []ProductType{
 		StorePage,
 		AccountPage,
-		WishlistPage}
+		WishlistPage,
+		OrderPage,
+	}
 }
 
 func Array() []ProductType {
@@ -37,5 +39,6 @@ func Local() []ProductType {
 		ApiProductsV1,
 		ApiProductsV2,
 		LicenceProducts,
+		Order,
 	}
 }
