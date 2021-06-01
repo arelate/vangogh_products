@@ -39,6 +39,6 @@ func Local() []ProductType {
 		ApiProductsV1,
 		ApiProductsV2,
 		LicenceProducts,
-		Order,
+		Orders,
 	}
 }

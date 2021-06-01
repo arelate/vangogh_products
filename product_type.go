@@ -16,7 +16,7 @@ const (
 	Licences
 	LicenceProducts
 	OrderPage
-	Order
+	Orders
 )
 
 var productTypeStrings = map[ProductType]string{
@@ -33,7 +33,16 @@ var productTypeStrings = map[ProductType]string{
 	Licences:         "licences",
 	LicenceProducts:  "licence-products",
 	OrderPage:        "order-page",
-	Order:            "order",
+	Orders:           "orders",
+}
+
+//the list is intentionally scoped to very few types we anticipate
+//will be interesting to output in human readable form
+var productTypeHumanReadableStrings = map[ProductType]string{
+	StoreProducts:    "store",
+	WishlistProducts: "wishlist",
+	AccountProducts:  "account",
+	Details:          "account",
 }
 
 func (pt ProductType) String() string {
@@ -43,6 +52,10 @@ func (pt ProductType) String() string {
 	}
 
 	return productTypeStrings[Unknown]
+}
+
+func (pt ProductType) HumanReadableString() string {
+	return productTypeHumanReadableStrings[pt]
 }
 
 func Parse(productType string) ProductType {

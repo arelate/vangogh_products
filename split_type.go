@@ -5,7 +5,7 @@ var splitProductTypes = map[ProductType]ProductType{
 	AccountPage:  AccountProducts,
 	WishlistPage: WishlistProducts,
 	Licences:     LicenceProducts,
-	OrderPage:    Order,
+	OrderPage:    Orders,
 }
 
 func SplitType(pt ProductType) ProductType {
